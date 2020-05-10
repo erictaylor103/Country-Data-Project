@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CountryCard from './components/CountryCard';
 
+
+
 function App() {
 
   const[countryList, setCountryList] = useState([]);
@@ -33,14 +35,16 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App">    
       <input type="text" placeholder="enter country name" onChange={handleSearch}></input>
       <button onClick={fetchCountry}>Submit</button>
+      
+      <h1 className="page-title">Countries of the World</h1>      
+      
       <br/>
       <br/>
       <br/>
       <CountryCard countryList={countryList}/>
-      
     </div>
   );
 }

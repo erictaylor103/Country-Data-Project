@@ -1,12 +1,25 @@
 import React from 'react';
 import App from '../App';
 import styled from 'styled-components';
+import Country from './Country';
 
-const CardContainer = styled.div`
+const MainContainer = styled.div`
 
-.country-flag{
-    width: 130px;
-}
+    *{
+        box-sizing: border-box;
+    }
+
+    margin: 0 auto;
+    justify-content: center;
+    
+
+    width: 90%;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    
+    
+
 
 `
 
@@ -14,24 +27,16 @@ const CardContainer = styled.div`
 function CountryCard(props){
     
     return(
-        <div>
+        <MainContainer>
             {props.countryList.map(country =>{
                 return(
-                <CardContainer>
-                <img className="country-flag" alt="country-flag" src={country.flag}/>
-                <p>{country.name}</p>
-                <p>Capital: {country.capital}</p>                
-                <hr />
-                <hr />
-                </CardContainer>
-                
-                
-                
+                    
+                    <Country countryData={country}/>
                 
                 )
             })
             }
-        </div>
+        </MainContainer>
     )
     
 }
